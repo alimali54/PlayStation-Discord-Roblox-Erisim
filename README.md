@@ -1,3 +1,7 @@
+<img width="502" height="527" alt="Ekran Alıntısı" src="https://github.com/user-attachments/assets/58027d21-c7b2-4138-8dbf-cd6a79489e5e" />
+
+## Nedir?
+
 Bu araç Playstation trafiğini PC üzerinden geçirerek internete çıkarır. Böylece PC'de GoodbyeDPI ile erişim engelini aştığınızda Playstation'da da aşmış olursunuz.
 
 GoodbyeDPI'ı sadece Roblox ve Discord domainleri etkileyecek şekilde yapılandırdım. Playstation'un tüm trafiği PC'den geçse de sadece Roblox ve Discord domainleri DPI bypass işleminden etkilenir, normal trafik etkilenmez.
@@ -16,15 +20,20 @@ GoodbyeDPI'ı sadece Roblox ve Discord domainleri etkileyecek şekilde yapıland
 PC ve Playstation'un aynı ağda olması yeterlidir. PC'yi kablo ile PS'e bağlama veya PC'den hotspot açma gibi işlemlere ihtiyaç yoktur.
 Playstation'da NAT tipi bozulmaz. Kendi denemelerimde normalde NAT 2 alırken işlemler sonrasında da NAT 2 alıyorum.
 
+## Çalışma mantığı
 
-<img width="502" height="527" alt="Ekran Alıntısı" src="https://github.com/user-attachments/assets/58027d21-c7b2-4138-8dbf-cd6a79489e5e" />
+Bu araç seti, bilgisayarınızı akıllı bir ağ köprüsü ve güvenli bir ağ geçidine dönüştürür. Süreç şu şekilde işler:
+
+1. **GoodbyeDPI (Erişim Engelleyici):** Yerel ağ trafiğindeki DPI (Derin Paket İnceleme) engellerini aşarak yasaklı veya sorunlu domainlere (Roblox, Discord vb.) erişim sağlar.
+2. **Go-Pcap2Socks (Sanal Ağ Köprüsü):** Bilgisayarınızda sanal bir ağ katmanı oluşturur. Konsolunuza (PS5/Xbox) programın belirttiği **172.24.x.x** bloğundaki IP adreslerini girdiğinizde, konsolunuz internete çıkmak için PC'nizi bir router olarak kullanmaya başlar.
+3. **DNSCrypt-Proxy (Şifreli DNS Sunucusu):** Bilgisayarınızı yerel bir DNS sunucusuna dönüştürür. DPI bypass işleminin başarılı olması için sitelerin **gerçek IP adreslerine** ulaşılması şarttır. ISS DNS'leri engelli siteler için yanlış/sahte IP döndürdüğünden, Playstation'ın DNS ayarlarına bilgisayarınızın IP adresini girerek PC'de çalışan DNSCrypt-Proxy servisine bağlanmış oluruz.
 
 
-Gereksinimler
+## Gereksinimler
 1.  **PC:** 64 Bit Windows işletim sistemi.
 2.  **Sürücü:** [Npcap](https://npcap.com/) yüklü olmalıdır.
 
-Kullanım Talimatları
+## Kullanım Talimatları
 
 1.  Programı **Yönetici Olarak** çalıştırın.
 2.  Güvenlik duvarı uyarıları gelirse "Erişime İzin Ver" butonuna tıklayın.
@@ -39,14 +48,14 @@ Kullanım Talimatları
 | **Birincil DNS** | *Programın sonunda verilen Local IP* |
 | **İkincil DNS** | *Programın sonunda verilen Local IP* |
 
-Kurulum (Geliştiriciler İçin)
+## Kurulum (Geliştiriciler İçin)
 
 Kaynak kodundan derlemek isterseniz:
 1. [AutoIt v3](https://www.autoitscript.com/site/autoit/) indirin ve kurun.
 2. `.au3` dosyasını `Compile Script to .exe` seçeneği ile derleyin.
 
 
-## 📜 Credits & Acknowledgments
+## 📜 Credits
 
 Bu proje, aşağıdaki harika açık kaynaklı araçları bir araya getirerek çalışmaktadır:
 

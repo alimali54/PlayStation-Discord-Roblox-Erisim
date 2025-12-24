@@ -24,9 +24,9 @@ Playstation'da NAT tipi bozulmaz. Kendi denemelerimde normalde NAT 2 alırken i�
 
 Bu araç seti, bilgisayarınızı akıllı bir ağ köprüsü ve güvenli bir ağ geçidine dönüştürür. Süreç şu şekilde işler:
 
-1. **GoodbyeDPI (Erişim Engelleyici):** Yerel ağ trafiğindeki DPI (Derin Paket İnceleme) engellerini aşarak yasaklı veya sorunlu domainlere (Roblox, Discord vb.) erişim sağlar.
-2. **Go-Pcap2Socks (Sanal Ağ Köprüsü):** Bilgisayarınızda sanal bir ağ katmanı oluşturur. Konsolunuza (PS5/Xbox) programın belirttiği **172.24.x.x** bloğundaki IP adreslerini girdiğinizde, konsolunuz internete çıkmak için PC'nizi bir router olarak kullanmaya başlar.
-3. **DNSCrypt-Proxy (Şifreli DNS Sunucusu):** Bilgisayarınızı yerel bir DNS sunucusuna dönüştürür. DPI bypass işleminin başarılı olması için sitelerin **gerçek IP adreslerine** ulaşılması şarttır. ISS DNS'leri engelli siteler için yanlış/sahte IP döndürdüğünden, Playstation'ın DNS ayarlarına bilgisayarınızın IP adresini girerek PC'de çalışan DNSCrypt-Proxy servisine bağlanmış oluruz.
+1. **GoodbyeDPI:** Yerel ağ trafiğindeki DPI (Derin Paket İnceleme) engellerini aşarak yasaklı veya sorunlu domainlere (Roblox, Discord vb.) erişim sağlar.
+2. **Go-Pcap2Socks:** Bilgisayarınızda sanal bir ağ katmanı oluşturur. Konsolunuza (PS5/Xbox) programın belirttiği **172.24.x.x** bloğundaki IP adreslerini girdiğinizde, konsolunuz internete çıkmak için PC'nizi bir router olarak kullanmaya başlar.
+3. **DNSCrypt-Proxy:** Bilgisayarınızı yerel bir DNS sunucusuna dönüştürür. DPI bypass işleminin başarılı olması için sitelerin **gerçek IP adreslerine** ulaşılması şarttır. ISS DNS'leri engelli siteler için yanlış/sahte IP döndürdüğünden, Playstation'ın DNS ayarlarına bilgisayarınızın IP adresini girerek PC'de çalışan DNSCrypt-Proxy servisine bağlanmış oluruz.
 
 
 ## Gereksinimler

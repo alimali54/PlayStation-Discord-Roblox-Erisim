@@ -1,4 +1,4 @@
-<img width="502" height="527" alt="Ekran Alıntısı" src="https://github.com/user-attachments/assets/58027d21-c7b2-4138-8dbf-cd6a79489e5e" />
+<img width="552" height="527" alt="Ekran görüntüsü 2025-12-25 104912" src="https://github.com/user-attachments/assets/2c23fb5c-42dc-4e79-8389-bb0cf8f95426" />
 
 ## Nedir?
 
@@ -63,5 +63,6 @@ Bu proje, aşağıdaki harika açık kaynaklı araçları bir araya getirerek ç
 * **[dnscrypt-proxy](https://github.com/DNSCrypt/dnscrypt-proxy)** - DNS trafiğini şifrelemek ve güvenli DNS kullanmak için.
 * **[go-pcap2socks](https://github.com/DaniilSokolyuk/go-pcap2socks)** - Pcap trafiğini SOCKS vekillere yönlendiren ağ köprüsü.
 * **[Npcap](https://npcap.com/)** - Windows için paket yakalama kütüphanesi.
+* **Google Gemini:** Ben söyledim, gemini kodları yazdı :)
 
 Bu araçların her biri kendi lisansları altında korunmaktadır. Onların emeği olmadan bu proje mümkün olmazdı.

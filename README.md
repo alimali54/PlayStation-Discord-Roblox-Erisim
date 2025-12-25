@@ -6,6 +6,9 @@ Bu araç Playstation trafiğini PC üzerinden geçirerek internete çıkarır. B
 
 GoodbyeDPI'ı sadece Roblox ve Discord domainleri etkileyecek şekilde yapılandırdım. Playstation'un tüm trafiği PC'den geçse de sadece Roblox ve Discord domainleri DPI bypass işleminden etkilenir, normal trafik etkilenmez.
 
+PC ve Playstation'un aynı ağda olması yeterlidir. PC'yi kablo ile PS'e bağlama veya PC'den hotspot açma gibi işlemlere ihtiyaç yoktur.
+Playstation'da NAT tipi bozulmaz. Kendi denemelerimde normalde NAT 2 alırken işlemler sonrasında da NAT 2 alıyorum.
+
 | Trafik Türü | İşlem (DPI Bypass) | Sonuç |
 | :--- | :---: | :--- |
 | **Discord (Sesli Sohbet & API)** | ✅ AKTİF | Bağlantı sorunları çözülür. |
@@ -17,12 +20,9 @@ GoodbyeDPI'ı sadece Roblox ve Discord domainleri etkileyecek şekilde yapıland
 > [!NOTE]
 > **Gecikme Hakkında:** Trafik bilgisayarınız üzerinden köprülenerek geçtiği için, bilgisayarınızın donanım performansına ve ağ kalitesine bağlı olarak çok minimal bir gecikme (ping) artışı yaşanabilir. En iyi performans için hem PC'nin hem de konsolun kablolu (Ethernet) bağlantı veya 5 Ghz Wi-Fi kullanması önerilir. 
 
-PC ve Playstation'un aynı ağda olması yeterlidir. PC'yi kablo ile PS'e bağlama veya PC'den hotspot açma gibi işlemlere ihtiyaç yoktur.
-Playstation'da NAT tipi bozulmaz. Kendi denemelerimde normalde NAT 2 alırken işlemler sonrasında da NAT 2 alıyorum.
-
 ## Çalışma mantığı
 
-Bu araç seti, bilgisayarınızı akıllı bir ağ köprüsü ve güvenli bir ağ geçidine dönüştürür. Süreç şu şekilde işler:
+Bu araç seti, bilgisayarınızı bir ağ geçidine dönüştürür. Süreç şu şekilde işler:
 
 1. **GoodbyeDPI:** Yerel ağ trafiğindeki DPI (Derin Paket İnceleme) engellerini aşarak yasaklı veya sorunlu domainlere (Roblox, Discord vb.) erişim sağlar.
 2. **Go-Pcap2Socks:** Bilgisayarınızda sanal bir ağ katmanı oluşturur. Konsolunuza (PS5/Xbox) programın belirttiği **172.24.x.x** bloğundaki IP adreslerini girdiğinizde, konsolunuz internete çıkmak için PC'nizi bir router olarak kullanmaya başlar.

@@ -124,13 +124,13 @@ For $p In $params
     LogMsg("Deneniyor: " & $p)
     ProcessClose("goodbyedpi.exe")
     Run($gdpiDir & "\goodbyedpi.exe " & $p, $gdpiDir, @SW_HIDE) ; Arka planda çalismasi daha stabil olur
-
+	Sleep(1000) ; kontrolden önce 1 saniye bekle
     ; Donmayi Önleyen kontrol mekanizmasi
     Local $hDownload = InetGet($testUrl, @TempDir & "\test.dat", 1, 1) ; 1, 1 = zorla indir ve arka planda yap
     Local $iTimer = TimerInit()
 
     While Not InetGetInfo($hDownload, 2) ; Indirme bitene kadar bekle
-        If TimerDiff($iTimer) > 6000 Then ExitLoop ; 6 saniye bekledik, tik yoksa  ik
+        If TimerDiff($iTimer) > 5000 Then ExitLoop ; 6 saniye bekledik, tik yoksa  ik
         Sleep(250) ; CPU'yu yormamak i in kisa bekleme
     WEnd
 
@@ -149,6 +149,7 @@ Next
 If $finalParam == "" Then
     LogMsg("HATA: Hiçbir parametre çalışmadı. Program kapatılıyor.")
 	Sleep(2000)
+	ProcessClose("goodbyedpi.exe")
 	CleanUpServices()
 	Exit
 EndIf

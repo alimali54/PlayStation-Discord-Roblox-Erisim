@@ -9,7 +9,7 @@
 
 ; --- Degiskenler ---
 Local $gdpiDir = @ScriptDir & "\goodbyedpi"
-Local $dnsDir = @ScriptDir & "\dnscrypt-proxy"
+;Local $dnsDir = @ScriptDir & "\dnscrypt-proxy"
 Local $pcapDir = @ScriptDir & "\go-pcap2socks"
 Local $testUrl = "https://www.roblox.com"
 Local $params[] = ["-5 --blacklist hosts.txt --dns-addr 1.1.1.1 --dns-port 53 --dnsv6-addr 2606:4700:4700::1111 --dnsv6-port 53", "-6 --blacklist hosts.txt --dns-addr 1.1.1.1 --dns-port 53 --dnsv6-addr 2606:4700:4700::1111 --dnsv6-port 53", "-7 --blacklist hosts.txt --dns-addr 1.1.1.1 --dns-port 53 --dnsv6-addr 2606:4700:4700::1111 --dnsv6-port 53", "-8 --blacklist hosts.txt --dns-addr 1.1.1.1 --dns-port 53 --dnsv6-addr 2606:4700:4700::1111 --dnsv6-port 53", "-9 --blacklist hosts.txt --dns-addr 1.1.1.1 --dns-port 53 --dnsv6-addr 2606:4700:4700::1111 --dnsv6-port 53", "-5 --set-ttl 5 --blacklist hosts.txt --dns-addr 1.1.1.1 --dns-port 53 --dnsv6-addr 2606:4700:4700::1111 --dnsv6-port 53", "--set-ttl 3 --blacklist hosts.txt --dns-addr 1.1.1.1 --dns-port 53 --dnsv6-addr 2606:4700:4700::1111 --dnsv6-port 53"]
@@ -78,10 +78,10 @@ EndIf
 LogMsg("[OK] Npcap yüklü.")
 
 ; --- ADIM 2: GÜVENLIK DUVARI TETIKLEME ---
-Local $apps[2] = [$dnsDir & "\dnscrypt-proxy.exe", $pcapDir & "\go-pcap2socks.exe"]
-Local $appNames[2] = ["dnscrypt-proxy.exe", "go-pcap2socks.exe"]
+Local $apps[1] = [$pcapDir & "\go-pcap2socks.exe"]
+Local $appNames[1] = ["go-pcap2socks.exe"]
 
-For $i = 0 To 1
+For $i = 0 To 0
     If Not HasFirewallRule($apps[$i]) Then
         LogMsg("!!! " & $appNames[$i] & " için izin bulunamadı.")
         LogMsg("5 saniye sonra pencere açılacak, lütfen GÜVENLIK DUVARI İZNİ VERİN.")
@@ -155,22 +155,22 @@ If $finalParam == "" Then
 EndIf
 
 ; --- ADIM 4: DIGERLERINI BASLAT VE BILGI VER ---
-LogMsg("DNSCrypt başlatılıyor...")
-Run($dnsDir & "\dnscrypt-proxy.exe", $dnsDir, @SW_HIDE)
+;LogMsg("DNSCrypt başlatılıyor...")
+;Run($dnsDir & "\dnscrypt-proxy.exe", $dnsDir, @SW_HIDE)
 
 LogMsg("Go-Pcap2Socks başlatılıyor...")
 Run($pcapDir & "\go-pcap2socks.exe", $pcapDir, @SW_HIDE)
 
 Sleep(2000)
-If ProcessExists("dnscrypt-proxy.exe") And ProcessExists("go-pcap2socks.exe") Then
+If ProcessExists("go-pcap2socks.exe") Then
     LogMsg("-------------------------------------------")
     LogMsg("PLAYSTATION MANUEL AĞ AYARLARI:")
     LogMsg("-------------------------------------------")
     LogMsg("IP Adresi  : 172.24.2.2-255 (Örn: 172.24.2.10)")
     LogMsg("Ağ Maskesi : 255.255.0.0")
     LogMsg("Ağ Geçidi  : 172.24.2.1")
-    LogMsg("DNS 1      : " & @IPAddress1)
-    LogMsg("DNS 2      : " & @IPAddress1)
+    LogMsg("DNS 1      : 1.1.1.1")
+    LogMsg("DNS 2      : 8.8.8.8")
     LogMsg("-------------------------------------------")
     LogMsg("SİSTEM ÇALIŞIYOR! İyi oyunlar.")
 Else
@@ -180,7 +180,7 @@ EndIf
 While 1
     If GUIGetMsg() = $GUI_EVENT_CLOSE Then
         ProcessClose("goodbyedpi.exe")
-        ProcessClose("dnscrypt-proxy.exe")
+        ;ProcessClose("dnscrypt-proxy.exe")
         ProcessClose("go-pcap2socks.exe")
 		CleanUpServices()
         Exit
